@@ -4,7 +4,7 @@ module.exports = {
   entry: {
     main: "./src/main.js"
   },
-  //   mode: "development",
+  // mode: "development",
   mode: "production",
   output: {
     filename: "[name]-bundle.js",
@@ -12,7 +12,8 @@ module.exports = {
     publicPath: "/"
   },
   devServer: {
-    contentBase: "dist"
+    contentBase: "dist",
+    overlay: true
   },
   module: {
     rules: [
@@ -24,6 +25,36 @@ module.exports = {
           },
           {
             loader: "css-loader"
+          }
+        ]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].html"
+            }
+          },
+          { loader: "extract-loader" },
+          {
+            loader: "html-loader",
+            options: {
+              attrs: ["img:src"]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(jpe?g|png)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[name]-[hash:8].[ext]",
+              esModule: false
+            }
           }
         ]
       }

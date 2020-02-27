@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "webpack": "webpack",
-    "webpack:dev": "npx webpack-dev-server"
+    "start": "npx webpack-dev-server",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "css-loader": "^3.4.2",
+    "extract-loader": "^4.0.3",
+    "file-loader": "^5.1.0",
+    "html-loader": "^0.5.5",
     "style-loader": "^1.1.3"
   }
 }

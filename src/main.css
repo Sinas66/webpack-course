@@ -4,6 +4,21 @@ body {
   padding: 0;
 }
 
+.profile {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+img {
+  border-radius: 100%;
+  width: 300px;
+  box-shadow: 0 0 20px #000;
+}
+
 h1 {
   margin: 0;
   padding: 0;
@@ -12,9 +27,4 @@ h1 {
   font-family: sans-serif;
   color: #fff;
   text-shadow: 5px 5px 10px #000;
-
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
